@@ -4,12 +4,7 @@ const loginController = require('../controllers/loginController')
 const passport = require('passport')
 const session = require('express-session');
 
-
-
-
-
-
-
+// /users
 router.get("/", loginController.login)
 
 router.post("/login", passport.authenticate('local', {
@@ -19,7 +14,7 @@ router.post("/login", passport.authenticate('local', {
   failureFlash: true,
 }))
 
-
+router.get('/logout',loginController.logout)
 
 
 

@@ -1,12 +1,12 @@
 <%- include('../partials/head.ejs')%>
 
-    <body class="bg-dark">
+    <body class="">
         <div class="row">
             <%- include( '../partials/aside.ejs' )%>
                 <div class="container col-5">
                     <div class=" card mt-5">
 
-                        <div class="card-header ">
+                        <div class="card-header alert-info ">
 
                             <h4>Cadastrar Usuário</h4>
                             <form method="post" action="/contatos/getUserRegister">
@@ -15,7 +15,7 @@
                                     <input class="form-control form-control-sm col-3" placeholder="Matrícula..."
                                         name="mat">
                                     <div class="input-group-append">
-                                        <button class="btn btn-info  fa fa-search" type="submit"></button>
+                                        <button class="btn btn-warning btn-sm " type="submit">Buscar</button>
                                     </div>
                                 </div>
                             </form>
@@ -47,8 +47,6 @@
                                                 <input class="form-control form-control-sm" name="password2"
                                                     type="password">
                         </div>
-
-
                         <% if(typeof errors !='undefined' ) {%>
                             <% errors.forEach(error=>{ %>
                                 <div class="alert alert-danger">
