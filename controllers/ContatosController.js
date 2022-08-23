@@ -21,7 +21,7 @@ const contatosController = {
 
     await ContatosModel.getMatricula(matricula, function (err, results) {
       if (results.rows.length == "") {
-        errors.push({ message: "matricula nao encontada" });
+        errors.push({ message: "matricula não encontrada" });
       }
       if (errors.length > 0) {
         res.render("partials/aside", { errors });
@@ -49,8 +49,8 @@ const contatosController = {
     let errors = [];
     await ContatosModel.getAllEv(function (err, results) {
       if (err) {
-       res.status(404).json("erro em agendamentos")
-       console.log(err)
+        res.status(404).json("erro em agendamentos")
+        console.log(err)
       }
       else {
         res.render("pages/agendamentos", { dados: results.rows });
@@ -58,14 +58,14 @@ const contatosController = {
     });
   },
   salvarContatos: async function (req, res) {
-   await ContatosModel.insertEv(req.body, function (err, results) {
+    await ContatosModel.insertEv(req.body, function (err, results) {
       if (results.rows.length > 0) {
         req.flash("success_msg", "Adcionado com sucesso!");
         res.redirect("/contatos/getAllEv");
         console.log("inserido com sucesso");
       } else {
-       res.status(401).json("erro ao inserir evento")
-       console.log(err)
+        res.status(401).json("erro ao inserir evento")
+        console.log(err)
       }
     });
   },
