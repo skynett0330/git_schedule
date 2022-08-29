@@ -52,7 +52,6 @@ app.use('/users',isAuthenticated,loginRouter)
 app.use("/contatos",isAuthenticated, contatoRouter)
 app.use("/user",isAuthenticated,userRouter)
 
-
 app.listen(PORT, function (req, res) {
   console.log(chalk.bgBlue("conectado a porta ", PORT));
 })

@@ -6,15 +6,11 @@ const ContatosModel = require("../models/contatos/ContatosModel");
 const loginModel = require("../models/loginModel/loginModel");
 
 const contatosController = {
-  // allContatos: function (req, res) {
-  //   ContatosModel.getContatos(function (error, results) {
-  //     if (error) {
-  //       throw error;
-  //     } else {
-  //       console.log(results);
-  //     }
-  //   });
-  // },
+
+
+  allContatos: function (req, res) {
+  res.render('pages/allContatos') 
+  },
   getMatricula: async function (req, res) {
     let matricula = req.body;
     let errors = [];
@@ -29,12 +25,13 @@ const contatosController = {
         res.render("pages/contatosId", {
           datas: results.rows,
         });
-
         // res.render("pages/contatosId", {
         //   datas: results.rows,
         // });
       }
     });
+
+ 
   },
 
   index: function (req, res) {

@@ -14,6 +14,6 @@ router.post('/editar/:id?',contatosController.editar)
 router.get('/getId/:id?',contatosController.getIdContatos)
 router.get('/telFunc',contatosController.getTelFunc)
 router.post('/getUserRegister',contatosController.getUserRegister)
-// router.get('/allContatos',contatosController.allContatos)
+router.get('/allContatos',contatosController.allContatos)
 router.post('/addListBpm',contatosController.addListBpm);
 module.exports = router
